@@ -61,3 +61,5 @@ struct Prices {
     usd: f32,
     ars: f32,
 }
+
+//para construir la aplicacion una vez terminamos usamos el cargo build --release
