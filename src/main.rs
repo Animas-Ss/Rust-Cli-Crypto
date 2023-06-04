@@ -1,4 +1,5 @@
 use serde::{Serialize, Deserialize};
+use std::io;
 //use serde_json::Value; ya no lo necesitamos por que cambiamos de structura por una propia
 fn main() {
     let mut coin = String::new();
@@ -14,7 +15,9 @@ fn main() {
         Ok(value) => println!("el valor de la respuesta es : ${}", value),//podriamos pasar el valor a pesos
         Err(error) => println!("Ocurrio un error en la peticion: {}", error),
     }
-    
+    let mut buffer = String::new();
+    println!("¡Precione enter para terminar!");
+    let _ = io::stdin().read_line(&mut buffer);//Espera que el usuario presione enter para salir
     //TODO MANEJO DE ERRORES
    /*  match response {
         Ok(_bytes) => {
